@@ -83,6 +83,19 @@
             mix-blend-mode: difference;
         }
 
+        @media (hover: none) and (pointer: coarse) {
+            *,
+            *::before,
+            *::after {
+                cursor: auto !important;
+            }
+
+            #cursor-dot,
+            #cursor-ring {
+                display: none;
+            }
+        }
+
         /* Scrollbar custom */
         ::-webkit-scrollbar {
             width: 10px;
@@ -1222,6 +1235,7 @@
         const lenis = new Lenis({
             lerp: 0.05,
             smoothWheel: true,
+            syncTouch: true,
             wheelMultiplier: 0.8,
             touchMultiplier: 1.2,
             anchors: false,
